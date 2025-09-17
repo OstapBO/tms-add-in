@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+	xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+	xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+    xsi:type="TaskPaneApp">
+	<Id>c0a5e2a5-1f8b-4ad7-ae0e-45a7f61b3db4</Id>
+	<Version>1.0.0.0</Version>
+	<ProviderName>TMSystems AI</ProviderName>
+	<DefaultLocale>en-US</DefaultLocale>
+	<DisplayName DefaultValue="Merge Fields"/>
+	<Description DefaultValue="Insert predefined variables into Word from a ribbon dropdown."/>
+	<Hosts>
+		<Host Name="Document"/>
+	</Hosts>
+	<!-- Required even for commands-only add-ins -->
+	<DefaultSettings>
+		<SourceLocation DefaultValue="https://tasc-dev.sadco.io/ms-add-in/commands/"/>
+	</DefaultSettings>
+	<Permissions>ReadWriteDocument</Permissions>
+	<VersionOverrides xsi:type="ov:VersionOverridesV1_0">
+		<Hosts>
+			<Host xsi:type="Document">
+				<DesktopFormFactor>
+					<FunctionFile resid="residFunctionFileUrl"/>
+					<ExtensionPoint xsi:type="PrimaryCommandSurface">
+						<!-- Attach to the BUILT-IN Insert tab -->
+						<OfficeTab id="TabInsert">
+							<Group id="PolicyVars.Group">
+								<Label resid="residGroupLabel"/>
+								<!-- Your dropdown menu -->
+								<Control xsi:type="Menu" id="PolicyVars.Menu">
+									<Label resid="residMenuLabel"/>
+									<Supertip>
+										<Title resid="residMenuLabel"/>
+										<Description resid="residMenuDesc"/>
+									</Supertip>
+									<Items>
+										<!-- Setagy -->
+										<Item id="mf.Setagy_BusinessPhone">
+											<Label resid="mf.Setagy_BusinessPhone.Label"/>
+											<Supertip>
+												<Title resid="mf.Setagy_BusinessPhone.Label"/>
+												<Description resid="mf.Setagy_BusinessPhone.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Setagy_FaxPhone">
+											<Label resid="mf.Setagy_FaxPhone.Label"/>
+											<Supertip>
+												<Title resid="mf.Setagy_FaxPhone.Label"/>
+												<Description resid="mf.Setagy_FaxPhone.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Setagy_24HourPhone">
+											<Label resid="mf.Setagy_24HourPhone.Label"/>
+											<Supertip>
+												<Title resid="mf.Setagy_24HourPhone.Label"/>
+												<Description resid="mf.Setagy_24HourPhone.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Setagy_EMail">
+											<Label resid="mf.Setagy_EMail.Label"/>
+											<Supertip>
+												<Title resid="mf.Setagy_EMail.Label"/>
+												<Description resid="mf.Setagy_EMail.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<!-- Cust -->
+										<Item id="mf.Cust_CustNumber">
+											<Label resid="mf.Cust_CustNumber.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_CustNumber.Label"/>
+												<Description resid="mf.Cust_CustNumber.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_LastName">
+											<Label resid="mf.Cust_LastName.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_LastName.Label"/>
+												<Description resid="mf.Cust_LastName.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_FirstName">
+											<Label resid="mf.Cust_FirstName.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_FirstName.Label"/>
+												<Description resid="mf.Cust_FirstName.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_MiddleName">
+											<Label resid="mf.Cust_MiddleName.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_MiddleName.Label"/>
+												<Description resid="mf.Cust_MiddleName.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_FullName">
+											<Label resid="mf.Cust_FullName.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_FullName.Label"/>
+												<Description resid="mf.Cust_FullName.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_FirmName">
+											<Label resid="mf.Cust_FirmName.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_FirmName.Label"/>
+												<Description resid="mf.Cust_FirmName.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_DBA">
+											<Label resid="mf.Cust_DBA.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_DBA.Label"/>
+												<Description resid="mf.Cust_DBA.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_Addr1">
+											<Label resid="mf.Cust_Addr1.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_Addr1.Label"/>
+												<Description resid="mf.Cust_Addr1.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_Addr2">
+											<Label resid="mf.Cust_Addr2.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_Addr2.Label"/>
+												<Description resid="mf.Cust_Addr2.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_CityStateZip">
+											<Label resid="mf.Cust_CityStateZip.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_CityStateZip.Label"/>
+												<Description resid="mf.Cust_CityStateZip.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_City">
+											<Label resid="mf.Cust_City.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_City.Label"/>
+												<Description resid="mf.Cust_City.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_State">
+											<Label resid="mf.Cust_State.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_State.Label"/>
+												<Description resid="mf.Cust_State.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_Zip">
+											<Label resid="mf.Cust_Zip.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_Zip.Label"/>
+												<Description resid="mf.Cust_Zip.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_County">
+											<Label resid="mf.Cust_County.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_County.Label"/>
+												<Description resid="mf.Cust_County.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_EMail">
+											<Label resid="mf.Cust_EMail.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_EMail.Label"/>
+												<Description resid="mf.Cust_EMail.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+										<Item id="mf.Cust_BillName">
+											<Label resid="mf.Cust_BillName.Label"/>
+											<Supertip>
+												<Title resid="mf.Cust_BillName.Label"/>
+												<Description resid="mf.Cust_BillName.Desc"/>
+											</Supertip>
+											<Action xsi:type="ExecuteFunction">
+												<FunctionName>insertVariable</FunctionName>
+											</Action>
+										</Item>
+									</Items>
+								</Control>
+							</Group>
+						</OfficeTab>
+					</ExtensionPoint>
+				</DesktopFormFactor>
+			</Host>
+		</Hosts>
+		<Resources>
+			<bt:Urls>
+				<bt:Url id="residFunctionFileUrl" DefaultValue="https://tasc-dev.sadco.io/ms-add-in/commands/"/>
+			</bt:Urls>
+			<bt:ShortStrings>
+				<bt:String id="residGroupLabel" DefaultValue="Policy Vars"/>
+				<bt:String id="residMenuLabel"  DefaultValue="Insert Variable"/>
+				<!-- Setagy labels -->
+				<bt:String id="mf.Setagy_BusinessPhone.Label" DefaultValue="Setagy_BusinessPhone"/>
+				<bt:String id="mf.Setagy_FaxPhone.Label" DefaultValue="Setagy_FaxPhone"/>
+				<bt:String id="mf.Setagy_24HourPhone.Label" DefaultValue="Setagy_24HourPhone"/>
+				<bt:String id="mf.Setagy_EMail.Label" DefaultValue="Setagy_EMail"/>
+				<!-- Cust labels -->
+				<bt:String id="mf.Cust_CustNumber.Label" DefaultValue="Cust_CustNumber"/>
+				<bt:String id="mf.Cust_LastName.Label" DefaultValue="Cust_LastName"/>
+				<bt:String id="mf.Cust_FirstName.Label" DefaultValue="Cust_FirstName"/>
+				<bt:String id="mf.Cust_MiddleName.Label" DefaultValue="Cust_MiddleName"/>
+				<bt:String id="mf.Cust_FullName.Label" DefaultValue="Cust_FullName"/>
+				<bt:String id="mf.Cust_FirmName.Label" DefaultValue="Cust_FirmName"/>
+				<bt:String id="mf.Cust_DBA.Label" DefaultValue="Cust_DBA"/>
+				<bt:String id="mf.Cust_Addr1.Label" DefaultValue="Cust_Addr1"/>
+				<bt:String id="mf.Cust_Addr2.Label" DefaultValue="Cust_Addr2"/>
+				<bt:String id="mf.Cust_CityStateZip.Label" DefaultValue="Cust_CityStateZip"/>
+				<bt:String id="mf.Cust_City.Label" DefaultValue="Cust_City"/>
+				<bt:String id="mf.Cust_State.Label" DefaultValue="Cust_State"/>
+				<bt:String id="mf.Cust_Zip.Label" DefaultValue="Cust_Zip"/>
+				<bt:String id="mf.Cust_County.Label" DefaultValue="Cust_County"/>
+				<bt:String id="mf.Cust_EMail.Label" DefaultValue="Cust_EMail"/>
+				<bt:String id="mf.Cust_BillName.Label" DefaultValue="Cust_BillName"/>
+			</bt:ShortStrings>
+			<bt:LongStrings>
+				<bt:String id="residMenuDesc" DefaultValue="Insert a predefined variable at the cursor or replace the selection."/>
+				<!-- Setagy descriptions -->
+				<bt:String id="mf.Setagy_BusinessPhone.Desc" DefaultValue="Inserts {{Setagy_BusinessPhone}}"/>
+				<bt:String id="mf.Setagy_FaxPhone.Desc" DefaultValue="Inserts {{Setagy_FaxPhone}}"/>
+				<bt:String id="mf.Setagy_24HourPhone.Desc" DefaultValue="Inserts {{Setagy_24HourPhone}}"/>
+				<bt:String id="mf.Setagy_EMail.Desc" DefaultValue="Inserts {{Setagy_EMail}}"/>
+				<!-- Cust descriptions -->
+				<bt:String id="mf.Cust_CustNumber.Desc" DefaultValue="Inserts {{Cust_CustNumber}}"/>
+				<bt:String id="mf.Cust_LastName.Desc" DefaultValue="Inserts {{Cust_LastName}}"/>
+				<bt:String id="mf.Cust_FirstName.Desc" DefaultValue="Inserts {{Cust_FirstName}}"/>
+				<bt:String id="mf.Cust_MiddleName.Desc" DefaultValue="Inserts {{Cust_MiddleName}}"/>
+				<bt:String id="mf.Cust_FullName.Desc" DefaultValue="Inserts {{Cust_FullName}}"/>
+				<bt:String id="mf.Cust_FirmName.Desc" DefaultValue="Inserts {{Cust_FirmName}}"/>
+				<bt:String id="mf.Cust_DBA.Desc" DefaultValue="Inserts {{Cust_DBA}}"/>
+				<bt:String id="mf.Cust_Addr1.Desc" DefaultValue="Inserts {{Cust_Addr1}}"/>
+				<bt:String id="mf.Cust_Addr2.Desc" DefaultValue="Inserts {{Cust_Addr2}}"/>
+				<bt:String id="mf.Cust_CityStateZip.Desc" DefaultValue="Inserts {{Cust_CityStateZip}}"/>
+				<bt:String id="mf.Cust_City.Desc" DefaultValue="Inserts {{Cust_City}}"/>
+				<bt:String id="mf.Cust_State.Desc" DefaultValue="Inserts {{Cust_State}}"/>
+				<bt:String id="mf.Cust_Zip.Desc" DefaultValue="Inserts {{Cust_Zip}}"/>
+				<bt:String id="mf.Cust_County.Desc" DefaultValue="Inserts {{Cust_County}}"/>
+				<bt:String id="mf.Cust_EMail.Desc" DefaultValue="Inserts {{Cust_EMail}}"/>
+				<bt:String id="mf.Cust_BillName.Desc" DefaultValue="Inserts {{Cust_BillName}}"/>
+			</bt:LongStrings>
+		</Resources>
+	</VersionOverrides>
+</OfficeApp>
