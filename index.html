@@ -20,7 +20,7 @@
         padding: 0;
         margin: 0;
         display: grid;
-        gap: 8px;
+        gap: 6px;
       }
       button {
         width: 100%;
@@ -38,7 +38,7 @@
       small {
         color: #62686f;
         display: block;
-        margin-top: 4px;
+        margin-top: 2px;
       }
     </style>
   </head>
@@ -48,20 +48,36 @@
 
     <script>
       const variables = [
-        { id: 'CustomerName', label: 'Customer Name', description: 'Insert {{CustomerName}}' },
-        { id: 'PolicyNumber', label: 'Policy Number', description: 'Insert {{PolicyNumber}}' },
-        // add more entries as needed
+        'Setagy_BusinessPhone',
+        'Setagy_FaxPhone',
+        'Setagy_24HourPhone',
+        'Setagy_EMail',
+        'Cust_CustNumber',
+        'Cust_LastName',
+        'Cust_FirstName',
+        'Cust_MiddleName',
+        'Cust_FullName',
+        'Cust_FirmName',
+        'Cust_DBA',
+        'Cust_Addr1',
+        'Cust_Addr2',
+        'Cust_CityStateZip',
+        'Cust_City',
+        'Cust_State',
+        'Cust_Zip',
+        'Cust_County',
+        'Cust_EMail',
+        'Cust_BillName'
       ];
 
       Office.onReady(() => {
         const list = document.getElementById('variables');
-
-        variables.forEach(({ id, label, description }) => {
+        variables.forEach((key) => {
           const li = document.createElement('li');
           const button = document.createElement('button');
           button.type = 'button';
-          button.innerHTML = `${label}<small>${description}</small>`;
-          button.addEventListener('click', () => insertVariableByKey(id));
+          button.innerHTML = `${key}<small>Insert {{${key}}}</small>`;
+          button.addEventListener('click', () => insertVariableByKey(key));
           li.appendChild(button);
           list.appendChild(li);
         });
